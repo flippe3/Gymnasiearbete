@@ -1,0 +1,34 @@
+//
+// Grid shader
+//
+
+//Default precision qualifier
+precision highp float;
+
+//This represents the current texture on the mesh
+uniform lowp sampler2D texture;
+
+//The interpolated vertex color for this fragment
+varying lowp vec4 vColor;
+
+//The interpolated texture coordinate for this fragment
+varying highp vec2 vTexCoord;
+
+void main()
+{
+    //Sample the texture at the interpolated coordinate
+    lowp vec4 col = texture2D( texture, vTexCoord ) * vColor;
+
+    float x,y;
+    x=fract(vTexCoord.x*25.0);
+    y=fract(vTexCoord.y*25.0);
+
+    // Draw a black and white grid.
+    if(x > 0.9 || y > 0.9) {
+        gl_FragColor = vec4(1,1,1,1);
+    }
+    else
+    {
+        gl_FragColor = vec4(0,0,0,0);
+    }
+}

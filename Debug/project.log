@@ -1,0 +1,10 @@
+﻿  game.cpp
+d:\visual studios\ga\source\game.cpp(138): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\visual studios\ga\source\game.cpp(146): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\visual studios\ga\source\game.cpp(159): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\visual studios\ga\source\game.cpp(167): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\visual studios\ga\source\game.cpp(192): warning C4018: '<': signed/unsigned mismatch
+d:\visual studios\ga\source\game.cpp(241): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+d:\visual studios\ga\source\game.cpp(263): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+d:\visual studios\ga\source\game.cpp(286): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  project.vcxproj -> D:\Visual Studios\GA\.\Debug\project.exe

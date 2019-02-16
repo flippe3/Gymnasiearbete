@@ -1,0 +1,29 @@
+cflags = -lGL -lGLU -lglfw -lGLEW -lSOIL -lfreetype
+
+rule cc
+     command = g++ -std=c++17 -o $out -c $in $cflags
+
+rule link
+     command = g++ -std=c++17 -o $out $in $cflags
+     description = LINK $out     
+
+
+build main.o : cc main.cpp
+build game.o : cc game.cpp
+build lager_game.o : cc lager_game.cpp
+build resource_manager.o : cc resource_manager.cpp
+build shader.o : cc shader.cpp
+build texture.o : cc texture.cpp
+build sprite_renderer.o : cc sprite_renderer.cpp
+build game_object.o : cc game_object.cpp
+build lager_game_object.o : cc lager_game_object.cpp
+build text_renderer.o : cc text_renderer.cpp
+build physics.o : cc physics.cpp
+build game_level.o : cc game_level.cpp
+build lager_game_level.o : cc lager_game_level.cpp
+build lager_main.o : cc lager_main.cpp
+build level_editor.o : cc level_editor.cpp
+build sokoban.o : cc sokoban.cpp
+build artificial_intelligence.o : cc artificial_intelligence.cpp
+
+build run: link main.o game.o resource_manager.o shader.o texture.o sprite_renderer.o game_object.o text_renderer.o physics.o game_level.o level_editor.o sokoban.o artificial_intelligence.o

@@ -1,0 +1,58 @@
+#include <algorithm>
+#include <iostream>
+
+#include "game.h"
+
+SpriteRenderer    *Renderer;
+GameObject        *Player;
+TextRenderer      *Text;
+
+//Now you can use all the physics
+physics Physics;
+
+Game::Game(GLuint width, GLuint height) :
+    State(GAME_ACTIVE), Keys(), Width(width), Height(height)
+{
+
+}
+
+Game::~Game()
+{
+    delete Renderer;
+    delete Player;
+    delete Text;
+}
+
+void Game::Init()
+{
+    // Load shaders
+    ResourceManager::LoadShader("../shaders/sprite.vs", "../shaders/sprite.frag", nullptr, "sprite");
+    //Setup the "camera"
+    glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width), static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
+    // Configure shaders
+    ResourceManager::GetShader("sprite").Use().SetInteger("sprite", 0);
+    ResourceManager::GetShader("sprite").SetMatrix4("projection", projection);
+
+    Shader load_player;
+    load_player = ResourceManager::GetShader("sprite");
+    Renderer = new SpriteRenderer(load_player);
+
+    glm::vec2 player_pos = glm::vec2(this->Width / 2, this->Height / 2);
+    Player = new GameObject(player_pos, PLAYER_SIZE, ResourceManager::GetTexture(""));
+}
+
+void Game::Update(double dt) 
+{
+
+}
+
+void Game::ProcessInput(double dt)
+{
+
+}
+
+void Game::Render()
+{
+
+}
+

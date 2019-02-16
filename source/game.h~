@@ -1,0 +1,57 @@
+#ifndef GAME_H
+#define GAME_H
+
+#include <vector>
+#include <tuple>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
+#include "game_object.h"
+#include "resource_manager.h"
+#include "sprite_renderer.h"
+#include "text_renderer.h"
+#include "physics.h"
+
+enum GameState {
+    GAME_ACTIVE,
+    GAME_MENU,
+    GAME_LEVEL_EDITOR,
+    GAME_WIN,
+    GAME_DEATH,
+    START_MENU
+};
+
+enum Game_Menu
+{
+    MAIN_MENU,
+    SOUND_MENU,
+    VIDEO_MENU,
+    CONTROL_MENU
+};
+
+const glm::vec2 PLAYER_SIZE(25, 25);
+const glm::vec2 PLAYER_VELOCITY(325.0f);
+
+class Game
+{
+public:
+    GameState State;
+    Game_Menu GameMenu;
+    GLboolean Keys[1024];
+    GLuint Width, Height;
+
+    //Constructors
+    Game(GLuint width, GLuint height);
+    ~Game();
+
+    //Runs before the game loop starts 
+    void Init();
+
+    void ProcessInput(GLfloat dt);
+    void Update(GLfloat dt);
+    void Render();
+void Load_Textures();
+}
+
+
+#endif

@@ -1,0 +1,41 @@
+Code:
+* Add minigames (lager)
+* Fix movement:
+  * wall jump
+  * double jump
+  * fly
+  * bounce
+  * cliffhang
+* Level editor
+* Camera
+* Menus - GUIs
+* Particles
+  * snow
+  * rain
+  * fire
+* Bouncing light physics  
+  
+
+Engine:
+* One character keyboard input
+* Alpha rendering
+* Light rendering
+* Particles
+* Text rendering == fps stealer
+* Bouncing light physics
+
+Graphics:
+* Menus
+* Characters
+  * Main character
+  * Enemies
+* Tileblocks
+  * Stone
+  * Grass
+  * Lava
+  * Spikes
+  * Saws
+  * more...
+* Backgrounds
+  * The actual backgrounds
+  * Trees and stuff that should be in the background but we should use them on other places too
